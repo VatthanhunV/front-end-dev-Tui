@@ -48,6 +48,9 @@ const ProfileEdit = ({
       },
     };
     // setChange(true);
+    if (information.userHeight < 0 || information.userWeight < 0) {
+      return toast.error("Weight or Height can not below 0");
+    }
     await axios
       .put(`${VURI}/users/${id}`,
       // .put(`${BACKEND_URL}/users/${id}`,
